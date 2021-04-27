@@ -1,0 +1,28 @@
+version: '3.5' 
+
+services: 
+
+    frontend: 
+      image: frontend
+      ports:
+        - 5000:5000
+      container_name: frontend-container
+      environment:
+        - REACT_APP_BACKEND_URL=http://127.0.0.1:8080
+
+    backend:
+      image: backend
+      ports:
+        - 8080:8080
+
+      container_name: backend-container
+      environment:
+        - REQUEST_ORIGIN=http://localhost:5000
+        - REDIS_HOST=redis
+      links:
+        - redis
+
+    redis:
+      image: redis:latest
+      container_name: redis
+    

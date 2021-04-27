@@ -1,0 +1,11 @@
+version: '3.5' 
+
+services: 
+
+    simple-web-service-2.2: 
+      image: devopsdockeruh/simple-web-service
+      ports:
+        - 80:8080
+      build: . 
+      container_name: simple-web-service_2.2
+      command: server

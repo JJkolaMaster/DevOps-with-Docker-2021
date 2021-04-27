@@ -1,0 +1,8 @@
+version: '3.5' 
+
+services: 
+  dragooon:
+      image: dragooon
+      container_name: dragooon-container
+      command: cowsay Fire!
+
